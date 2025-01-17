@@ -11,4 +11,3 @@ const user3 = prompt('what is ur name?');
 console.log(user3);
 
 // const user3 = require('prompt-sync')('enter');
-
