@@ -21,6 +21,7 @@ const storeKeys = Object.keys(store);
 console.log(storeKeys);
 for (const key of storeKeys) console.log(key);
 
+console.log('---property values----');
 //Property values
 const storeKeyValues = Object.values(store);
 for (const values of storeKeyValues) console.log(values);
@@ -32,5 +33,6 @@ for (const value of Object.values(store.breakfast)) {
 
 // Loop over entire objecs: object.entries()
 // array will be created and properties Name and properties values of object will be elements of newly created array
+console.log('----Object Entries-----');
 const keyValues = Object.entries(store);
 for (const element of keyValues) console.log(element);

@@ -13,7 +13,7 @@ console.log(updatedArray);
 /*
 the spread operator is actually a bit similar to destructuring,
 because it also helps us get elements out of arrays.
-Now, the big difference is that spread operator doesn't create new variables.
+xx -- Now, the big difference is that spread operator doesn't create new variables -- xx
 */
 
 // copying array / creating swallow copy of an array

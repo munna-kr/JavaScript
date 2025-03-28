@@ -72,7 +72,7 @@ console.log(weekDays);
 function add(...numbers) {
   sum = 0;
   for (let i = 0; i < numbers.length; i++) {
-    sum = + numbers[i];
+    sum = +numbers[i];
   }
   return sum;
 }
@@ -80,10 +80,9 @@ console.log(add(12, 10, 30));
 console.log(add(12, 34, 12, 3, 4, 5));
 console.log(add(10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22));
 
-
 // declaring one argument as mandatory and rest as optional
 function orderFood(main, ...optional) {
   console.log('main:', main);
   console.log('optional:', optional);
 }
-orderFood('Chapati', 'Aloo Paratha', 'Masala Dosa', 'Poori', 'Bhatura')
+orderFood('Chapati', 'Aloo Paratha', 'Masala Dosa', 'Poori', 'Bhatura');

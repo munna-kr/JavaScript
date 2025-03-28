@@ -1,14 +1,23 @@
 'use strict';
 
-const newMap = new Map();
-newMap
-  .set('name', 'newHuman')
-  .set('city', 'Patna')
-  .set('age', 23)
-  .set('Profession', 'WebDev');
+const flight = 'B8IN';
 
-console.log(newMap);
+const jack = {
+  name: 'Jack Ryan',
+  passport: 19303993,
+};
 
-const human = new Map();
-human.set('original', 'HomoSapiens', 'type', 'animal');
-console.log(human);
+// function...
+function checkIn(flight, passsenger) {
+  flight = 'AF09';
+  passsenger.name = 'Mr. ' + passsenger.name;
+
+  if (passsenger.passport === 19303993) {
+    console.log('Checked in');
+  } else {
+    console.log('Wrong passport');
+  }
+}
+checkIn(flight, jack);
+console.log(flight);
+console.log(jack);

@@ -5,7 +5,7 @@
 let message = 'Hello';
 console.log(typeof message);
 
-// re-assigning the value of same variable with 'number' value
+// re-assigning the value of same variable with 'numeric' value
 message = 10;
 console.log(typeof message);
 //Programming languages that allow such things are called dynamically typed

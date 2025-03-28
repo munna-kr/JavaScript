@@ -1,25 +1,29 @@
-
 const users = {
-    firstName: 'Jack',
-    lastName: 'Ryan',
-    birthYear: 1999,
-    job: 'Technician',
-    friends: ['rohan', 'rock', 'peter', 'thomas'],
-    hasDrivingLic: true,
-    hasPassport: false,
-    nationality: 'Indian',
+  firstName: 'Jack',
+  lastName: 'Ryan',
+  birthYear: 1999,
+  job: 'Technician',
+  friends: ['rohan', 'rock', 'peter', 'thomas'],
+  hasDrivingLic: true,
+  hasPassport: false,
+  tempLocation: 'Tokyo',
+  nationality: 'Indian',
 
-    //method
-    calcAge: function () {
-        this.age = 2025 - this.birthYear
-        return this.age;
-    },
+  //method
+  calcAge: function () {
+    this.age = 2025 - this.birthYear;
+    return this.age;
+  },
 
-    getSummary: function () {
-        const summary = `${this.firstName} is a ${this.job}, he is ${this.age} years old, he has ${this.hasDrivingLic ? 'a' : 'no'} Driving License, he is from ${this.location}.`;
-        return summary;
-    }
-}
+  getSummary: function () {
+    const summary = `${this.firstName} is a ${this.job}, he is ${
+      this.age
+    } years old, he has ${
+      this.hasDrivingLic ? 'a' : 'no'
+    } Driving License, he is from ${this.location}.`;
+    return summary;
+  },
+};
 
 //// dot vs bracket notation for accessing object properties
 
@@ -43,6 +47,11 @@ users.location = 'India';
 users.instagram = 'techjack';
 console.log(users);
 
-/////////// method; property of object as function 
+/////////// method; property of object as function
 console.log(users.calcAge());
-console.log(users.getSummary())
+console.log(users.getSummary());
+
+// deleting property from object
+delete users.tempLocation;
+
+console.log(users);
