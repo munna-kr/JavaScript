@@ -75,7 +75,7 @@ newPerson.category = 'adult';
 newPerson.action.push('run');
 console.log('copied object with updated new value', newPerson);
 
-// Deep copy/clone
+// structuredClone : Deep copy/clone
 const humanClone = structuredClone(human); // whole object is copied to new object
 console.log(humanClone);
 

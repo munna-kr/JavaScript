@@ -1,15 +1,16 @@
 'use strict';
 //====================================//
+//==> Data type: kind of value that a variale can hold 
 
 // create a variable and assign a 'string' value
 let message = 'Hello';
-console.log(typeof message);
 
 // re-assigning the value of same variable with 'numeric' value
 message = 10;
-console.log(typeof message);
-//Programming languages that allow such things are called dynamically typed
-// and JavaScript is dynamically typed programming language
+
+// Programming languages that allow such things are called dynamically typed
+// and JavaScript is dynamically typed programming language (unlike C/C++, which is statically typed)
+// no need to specify data type of variable while declaring 
 
 /*
 =====> DATATYPES IN JS <=====
@@ -38,12 +39,14 @@ console.log(typeof integerNumber, typeof floatingNumber);
 // Infinity : division by zero result in infinity
 console.log(19 / 0);
 
-// NaN : computational error result in NaN
+// NaN(Not-a-Number) : computational error result in NaN
 let nanVariable = 'Hello' / 20;
 console.log(nanVariable);
 // Any mathematical operation with NaN results in NaN
 // but, NaN**0 gives 1
 // as we know in maths, zero as power to any things result in 1
+// Nan === Nan (false)
+
 
 // =====> 2. BIGINT <=====
 /*
@@ -85,7 +88,7 @@ console.log(ghost);
 let score;
 console.log(score);
 
-//=====> 7.OBJECTS and 8.SYMBOLS
+//=====> 7.SYMBOLS and 8.OBJECTS
 // All other types are called “primitive” because their values can contain only a single thing (be it a string or a number or whatever).
 // In contrast, objects are used to store collections of data and more complex entities.
 // The symbol type is used to create unique identifiers for objects.

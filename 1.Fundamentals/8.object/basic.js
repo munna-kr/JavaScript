@@ -1,3 +1,9 @@
+// ==> OBJECT
+// ==> an object is a collection of key-value pairs
+// ==> value can be of different data types: strings, numbers, arrays, functions, even objects.
+// ==> 
+// ==> [...] for array and {...} for object
+
 const users = {
   firstName: 'Jack',
   lastName: 'Ryan',
@@ -16,11 +22,9 @@ const users = {
   },
 
   getSummary: function () {
-    const summary = `${this.firstName} is a ${this.job}, he is ${
-      this.age
-    } years old, he has ${
-      this.hasDrivingLic ? 'a' : 'no'
-    } Driving License, he is from ${this.location}.`;
+    const summary = `${this.firstName} is a ${this.job}, he is ${this.age
+      } years old, he has ${this.hasDrivingLic ? 'a' : 'no'
+      } Driving License, he is from ${this.location}.`;
     return summary;
   },
 };
@@ -31,6 +35,7 @@ const users = {
 console.log(users.firstName);
 
 // bracket notation
+// ==> use in for...in Loop to iterate 'value'
 console.log(users['firstName']);
 
 // const enteredValue = prompt("What do you want to know? firstName, lastname, birthYear, job, friends, hasDrivingLic, hasPassport, nationaltiy");

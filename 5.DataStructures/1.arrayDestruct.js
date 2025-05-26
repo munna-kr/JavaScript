@@ -1,7 +1,7 @@
 //=====> DESTRUCTURING ARRAY <======
 // method of unpacking value from an array or an object in to separate variables
 // in other words, breaking a complex data structue down into a smaller data structure like variable
-// iterable only..
+
 const basket = {
   fruits: ['apple', 'orange', 'cherry', 'mango'],
   vegetables: ['potato', 'spinach', 'cabbage', 'pumpkin'],
