@@ -14,7 +14,7 @@ console.log('Current Balance:', balance || 100);
 // || operator failed to evalaute actual value of balance, 0 is falsy value
 // so it will evaluate 100 (which is truthy value)
 
-// Nullish Coalescing operator, it fix the above error
+// Nullish Coalescing operator,     fix the above error
 // will return left-hand operand
 console.log('Current Balance:', balance ?? null);
 

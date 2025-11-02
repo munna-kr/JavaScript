@@ -8,8 +8,8 @@ and assign them to variables in a concise and readable manner
 const store = {
   name: 'Desi Kitchen',
   location: 'Near main SBI branch, Smart city, Bihar, India',
-  breakfast: ['Aloo Paratha', 'Masala Dosa', 'Poori', 'Bhatura'],
-  meal: ['Dal Tadka', 'Steamed Rice', 'Mixed Vegetable Sabzi', 'Chapati'],
+  breakfast: ['Aloo-Paratha', 'Masala-Dosa', 'Poori', 'Bhatura'],
+  meal: ['Dal-Tadka', 'Steamed-Rice', 'Mixed-Vegetable-Sabzi', 'Chapati'],
 
   openingHours: {
     mon: {
@@ -36,7 +36,7 @@ const store = {
   },
 };
 
-// we have to use object property as variable name,
+// we have to use "object property" as variable name,
 // without caring index, as in object index doesn't matter.
 const { name, location, meal } = store;
 console.log(name, location, meal);
@@ -46,9 +46,9 @@ const { name: storeName, meal: mealMenu } = store;
 console.log(storeName, mealMenu);
 
 // undefined: when there's no property with given variable name in object
-// no closingHour property in object: store
 const { closingHour } = store;
 console.log(closingHour);
+// no closingHour property in object: store
 
 // setting defalut value to avoid undefined
 // breakfast is present in store, so it won't take default value set to it

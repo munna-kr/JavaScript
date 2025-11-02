@@ -1,6 +1,6 @@
 'use strict';
 //====================================//
-//==> Data type: kind of value that a variale can hold 
+//==> Data type: kind of value that a variale can hold
 
 // create a variable and assign a 'string' value
 let message = 'Hello';
@@ -10,19 +10,28 @@ message = 10;
 
 // Programming languages that allow such things are called dynamically typed
 // and JavaScript is dynamically typed programming language (unlike C/C++, which is statically typed)
-// no need to specify data type of variable while declaring 
+// In JS, no need to specify data type of variable while declaring
 
 /*
 =====> DATATYPES IN JS <=====
 ---> There are eight basic data types in JS
 
     ==> Seven primitive data types:
-        1. 'number' -----> for numbers of any kind: integer or floating-point, integers are limited by ±(253-1).
+        1. 'number' -----> for numbers of any kind: integer or 
+        floating-point, integers are limited by ±(2^53-1).
+
         2. 'bigint' -----> for integer numbers of arbitrary length.
+
         3. 'string' -----> for strings. A string may have zero or more characters, there’s no separate single-character type.
+
         4. 'boolean' ----> for true/false.
-        5. 'null' -------> for unknown values – a standalone type that has a single value null.
-        6. 'undefined' --> for unassigned values – a standalone type that has a single value undefined.
+
+        5. 'null' -------> for unknown values – a standalone type
+        that has a single value null.
+
+        6. 'undefined' --> for unassigned values – a standalone type 
+        that has a single value undefined.
+
         7. 'symbol ------> for unique identifiers.
 
    ==> And one non-primitive data type:
@@ -47,13 +56,14 @@ console.log(nanVariable);
 // as we know in maths, zero as power to any things result in 1
 // Nan === Nan (false)
 
-
 // =====> 2. BIGINT <=====
 /*
 ---> The “number” type cannot safely represent integer values larger than (2^53-1) (that’s 9007199254740991),
-      or less than -(2^53-1) for negatives.
+or less than -(2^53-1) for negatives.
+
 ---> integers greater than (2^53-1) can’t be stored at all in the “number” type
 such huge numbers are stored using bigint
+
 ---> A BigInt value is created by appending n to the end of an integer:
 */
 let bigInt = 1234567890123456789012345678901234567890n;
@@ -79,7 +89,7 @@ console.log(isEven);
 
 // =========> 5.THE 'null' VALUE <=========
 // It’s just a special value which represents “nothing”, “empty” or “value unknown”.
-let ghost = null;
+let ghost = null; // assigned to null.
 console.log(ghost);
 
 // ========> 6.THE 'undefined' VALUE <======

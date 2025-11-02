@@ -1,0 +1,91 @@
+JavaScript Object
+│
+│
+├── 1) Object as a Function (Constructor)
+│       │
+│       └── Provides **Static Methods**
+│             (Called using: Object.method(...))
+│
+│
+│─── Static Methods (Grouped by Purpose)
+│
+│
+│   A) Property & Value Access
+│   │
+│   ├─ Object.keys(obj)
+│   ├─ Object.values(obj)
+│   └─ Object.entries(obj)
+│
+│
+│   B) Convert Between Object <-> Entries
+│   │
+│   └─ Object.fromEntries(keyValuePairArray)
+│
+│
+│   C) Copy & Merge
+│   │
+│   └─ Object.assign(target, source)
+│
+│
+│   D) Prototype Control
+│   │
+│   ├─ Object.create(proto)
+│   ├─ Object.getPrototypeOf(obj)
+│   └─ Object.setPrototypeOf(obj, proto)
+│
+│
+│   E) Define Property Structure / Descriptors
+│   │
+│   ├─ Object.defineProperty(obj, key, descriptor)
+│   └─ Object.defineProperties(obj, descriptors)
+│
+│
+│   F) Control Mutability (Object Freezing Levels)
+│   │
+│   ├─ Object.freeze(obj)
+│   │    (No change, No add, No remove)
+│   │
+│   ├─ Object.seal(obj)
+│   │    (Can change values, Cannot add/remove)
+│   │
+│   └─ Object.preventExtensions(obj)
+│        (Can change values & remove, Cannot add)
+│
+│
+│   G) Own Property Check
+│   │
+│   └─ Object.hasOwn(obj, key)
+│
+│
+│
+└── 2) Objects Created in JavaScript
+        │
+        └── Each object has
+              ├─ Its own properties (key: value)
+              └─ A hidden prototype link:
+                     __proto__ → Object.prototype
+
+
+// ==> 
+Object.prototype
+│
+│
+└── Prototype Methods (Inherited by All Objects)
+     (Called as: obj.method())
+     
+     A) Property Checking
+     │
+     ├─ obj.hasOwnProperty(key)
+     └─ obj.propertyIsEnumerable(key)
+     
+     B) Prototype Relationship
+     │
+     └─ obj.isPrototypeOf(otherObj)
+     
+     C) Conversion / Representation
+     │
+     ├─ obj.toString()
+     ├─ obj.toLocaleString()
+     └─ obj.valueOf()
+
+==>

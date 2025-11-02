@@ -1,20 +1,34 @@
-// process.stdout.write('Enter your name: ');
+const users = { name: 'John', age: 30 };
+const nums = [1, 2, 3, 4, 5];
+console.log(users.hasOwnProperty('age')); // true
+console.log(Object.keys(users)); //
+console.log(Object.values(users)); // 'john', 30
+console.log(Object.entries(users));
+console.log(
+  Object.fromEntries([
+    ['name', 'Jane'],
+    ['age', 25],
+  ])
+);
 
-// process.stdin.on('data', (data) => {
-//   const name = data.toString().trim();
-//   console.log(`Hello, ${name}!`);
-//   process.exit(); // Exit the process after receiving input
-// });
+console.log('merging');
+const newUsers = { name: 'Alice', age: 28 };
+console.log(Object.assign({ users }, newUsers)); // merging objects
 
-// const prompt = require('prompt-sync')();
-// const user3 = prompt('what is ur name?');
-// console.log(user3);
+users.class = 'A';
+console.log(users);
+delete users.class;
+console.log(users);
+Object.freeze(users);
+users.profit = 1000; // This will not work, because the object is frozen
+Object.seal(users);
+users.group = 'DataAnalyst'; // This will work, because sealing allows modification of existing properties
+users.name = 'Doe'; // This will work, because sealing allows modification of existing properties
+console.log(users);
 
-// const user3 = require('prompt-sync')('enter');
-
-const table = [12, 29, 10, 18, 11, 3, 90];
-
-const [twelve, twonine, ten, eigtheen, eleven] = table;
-console.log(twelve, ten);
-
-console.log('Hello there !');
+Object.preventExtensions(users);
+users.country = 'USA'; // This will not work, because the object is not extensible
+console.log(users);
+console.log(Object.hasOwn(users, 'name')); // this is the new way
+console.log(users.hasOwnProperty('name')); // this is the old way
+// use the new way, it's introduced in ES2022

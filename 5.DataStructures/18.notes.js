@@ -31,4 +31,4 @@ const method22 = words.padEnd(30, '*');
 
 const method23 = words.repeat(2);
 
-console.log(method2);
+console.log(method21);

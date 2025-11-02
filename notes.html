@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Object Methods Flowchart - Searchable</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        padding: 20px;
+      }
+      #search {
+        padding: 8px;
+        width: 100%;
+        margin-bottom: 14px;
+        font-size: 16px;
+      }
+      .node {
+        border: 1px solid #555;
+        padding: 8px 12px;
+        border-radius: 6px;
+        margin: 6px 0;
+        cursor: pointer;
+        background: #fafafa;
+        transition: 0.2s;
+      }
+      .node:hover {
+        background: #e8f0ff;
+      }
+      .children {
+        margin-left: 20px;
+        display: none;
+      }
+      .match {
+        background: #ffff8a !important;
+      }
+      pre {
+        background: #eee;
+        padding: 8px;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>JavaScript Object Methods Flowchart (Searchable)</h2>
+    <input
+      type="text"
+      id="search"
+      placeholder="Search method... (e.g., keys, freeze, toString)"
+    />
+
+    <div class="node" onclick="toggle('static')">1) Static Methods</div>
+    <div id="static" class="children">
+      <div class="node" onclick="toggle('create')">Object.create()</div>
+      <div id="create" class="children">
+        <pre>const obj = Object.create(proto);</pre>
+      </div>
+
+      <div class="node" onclick="toggle('assign')">Object.assign()</div>
+      <div id="assign" class="children">
+        <pre>Object.assign(target, source);</pre>
+      </div>
+
+      <div class="node" onclick="toggle('keys')">Object.keys()</div>
+      <div id="keys" class="children"><pre>Object.keys(obj);</pre></div>
+
+      <div class="node" onclick="toggle('values')">Object.values()</div>
+      <div id="values" class="children"><pre>Object.values(obj);</pre></div>
+
+      <div class="node" onclick="toggle('entries')">Object.entries()</div>
+      <div id="entries" class="children"><pre>Object.entries(obj);</pre></div>
+
+      <div class="node" onclick="toggle('freeze')">Object.freeze()</div>
+      <div id="freeze" class="children"><pre>Object.freeze(obj);</pre></div>
+
+      <div class="node" onclick="toggle('seal')">Object.seal()</div>
+      <div id="seal" class="children"><pre>Object.seal(obj);</pre></div>
+    </div>
+
+    <div class="node" onclick="toggle('proto')">2) Prototype Methods</div>
+    <div id="proto" class="children">
+      <div class="node" onclick="toggle('hasOwnProperty')">
+        hasOwnProperty()
+      </div>
+      <div id="hasOwnProperty" class="children">
+        <pre>obj.hasOwnProperty("key");</pre>
+      </div>
+
+      <div class="node" onclick="toggle('isPrototypeOf')">isPrototypeOf()</div>
+      <div id="isPrototypeOf" class="children">
+        <pre>a.isPrototypeOf(b);</pre>
+      </div>
+
+      <div class="node" onclick="toggle('propertyIsEnumerable')">
+        propertyIsEnumerable()
+      </div>
+      <div id="propertyIsEnumerable" class="children">
+        <pre>obj.propertyIsEnumerable("key");</pre>
+      </div>
+
+      <div class="node" onclick="toggle('toString')">toString()</div>
+      <div id="toString" class="children"><pre>obj.toString();</pre></div>
+
+      <div class="node" onclick="toggle('valueOf')">valueOf()</div>
+      <div id="valueOf" class="children"><pre>obj.valueOf();</pre></div>
+    </div>
+
+    <script>
+      function toggle(id) {
+        const el = document.getElementById(id);
+        el.style.display = el.style.display === 'block' ? 'none' : 'block';
+      }
+
+      const search = document.getElementById('search');
+      search.addEventListener('input', function () {
+        const term = this.value.toLowerCase();
+        document.querySelectorAll('.node').forEach((node) => {
+          node.classList.remove('match');
+          if (term && node.textContent.toLowerCase().includes(term)) {
+            node.classList.add('match');
+            let parent = node.parentElement;
+            while (parent && parent.classList.contains('children')) {
+              parent.style.display = 'block';
+              parent = parent.parentElement;
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

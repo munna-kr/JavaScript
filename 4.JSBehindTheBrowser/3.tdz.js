@@ -2,6 +2,10 @@
 // ====> Temporal dead zone <====
 
 // ====> Variable <====
+//==> on accessing before initializations...
+// var : give undefined
+// let : cannot access before initializations
+// const cannot access before initializations
 console.log(diff); // TDZ for diff variable, give undefined
 
 // console.log(add); // TDZ for add variable, give ReferenceError: cannot access before initialization

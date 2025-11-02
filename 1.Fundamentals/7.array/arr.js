@@ -2,7 +2,7 @@
 // ==> An array is a special variable that can store multiple values in a single variable.
 // ==> we can store different data type value in the same array (unlike C/C++)
 
-const mixArray = [12, 13, 'hello', 10.12, true]
+const mixArray = [12, 13, 'hello', 10.12, true];
 console.log(mixArray);
 
 //--
@@ -24,19 +24,49 @@ users.push('hunter'); // end of the array
 users.unshift('thomas'); // starting of the array
 
 //removing element
-users.pop(); // remove last element 
+users.pop(); // remove last element
 users.shift(); // remove first element
 
 users.length; // total elements of an array
 
-users.reverse() // reverse array
+users.reverse(); // reverse array
 
 // return element located at specific index
 const loc = users.at('3');
 
 // return index of specific element
+// return -1 if specified value is not present in Given array.
 users.indexOf('mohan');
 
 // return boolean value, if specific element is present or not..
 console.log(users.includes('rock'));
 console.log(users.includes('horse'));
+
+//=======> Loops through Array <======
+const tables = [12, 10, 20, 22, 16];
+
+//==> for loops
+for (let i = 0; i < tables.length; i++) {
+  console.log(tables[i]);
+}
+
+//==> for in : iterate over the index of aray
+for (index in tables) {
+  console.log(index);
+  //   console.log(tables[index]);
+}
+
+//==> for of : iterate over the value of array
+for (value of tables) {
+  console.log(value);
+}
+
+//========> Methods in array <========
+//==> forEach() method:
+tables.forEach(function (value, index) {
+  console.log(value, index);
+});
+//-- using arrow function
+tables.forEach((value, index) => {
+  console.log(value, index);
+});

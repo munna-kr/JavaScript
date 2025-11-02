@@ -3,6 +3,10 @@
 --> It gather/pack the "rest" of the elements or arguments into a single array or object. 
 --> It's represented by three dots (...) like spread operator 
 --> it does opposite of spread operator
+
+--> REST: Packing 
+--> SPREAD: Unpacking
+
 */
 
 const numbers = [12, 34, 3, 4, 55, 20, 10];
@@ -70,9 +74,14 @@ console.log(weekDays);
 // The rest operator can collect all remaining arguments
 // passed to a function into an array.
 function add(...numbers) {
-  sum = 0;
-  for (let i = 0; i < numbers.length; i++) {
-    sum = +numbers[i];
+  let sum = 0;
+
+  // for (let i = 0; i < numbers.length; i++) {
+  //   sum += numbers[i];
+  // }
+
+  for (num of numbers) {
+    sum += num;
   }
   return sum;
 }

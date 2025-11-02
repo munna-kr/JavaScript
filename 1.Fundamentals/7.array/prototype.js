@@ -1,26 +1,3 @@
-'use strict';
-
-// const flight = 'B8IN'; // primitive value: string
-
-// const jack = {
-//   name: 'Jack Ryan',
-//   passport: 19303993,
-// }; // non primitve : object
-
-// // function...
-// function checkIn(flight, passsenger) {
-//   flight = 'AF09';
-//   passsenger.name = 'Mr. ' + passsenger.name;
-
-//   if (passsenger.passport === 19303993) {
-//     console.log('Checked in');
-//   } else {
-//     console.log('Wrong passport');
-//   }
-// }
-// checkIn(flight, jack);
-// console.log(flight); // no changes
-// console.log(jack); // changes in original value
 /*
                 JAVASCRIPT ARRAY STRUCTURE
        ────────────────────────────────────────────
@@ -59,18 +36,26 @@
    arr.push(40);
    push() is looked up from Array.prototype through __proto__ link.
 */
-// proof of array does not contain methods directly
+
+// proof that array does not contain methods directly,
+// methdods live in Array.prototype
 const arr1 = [2, 4, 6, 8, 10];
 arr1.push(12);
 console.log(arr1.hasOwnProperty('push')); // false
 console.log(Array.prototype.hasOwnProperty('push')); // true
 
-// Accessing prototype
+// Proof that __proto__ points to Array.prototype
 console.log(arr1.__proto__ === Array.prototype); // true
 
 // Accessing length property from prototype chain
-console.log(arr1.__proto__.length); // 0
+console.log(arr1.__proto__.length); // 0 as Array.prototype is not an array, so no elements in it
 console.log(arr1.length); // 5
 
 // Viewing Array.prototype
 console.log(Array.prototype); // shows all array methods
+
+// creating custom method on Array.prototype
+Array.prototype.greet = function () {
+  return 'Hello this is customized method';
+};
+console.log(array1.greet());

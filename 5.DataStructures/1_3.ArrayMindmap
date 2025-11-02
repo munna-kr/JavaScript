@@ -1,0 +1,45 @@
+Array
+│
+├── Properties
+│   └── length
+│
+├── Add / Remove
+│   ├── push
+│   ├── pop
+│   ├── unshift
+│   ├── shift
+│   ├── splice
+│   └── slice
+│
+├── Searching
+│   ├── indexOf
+│   ├── lastIndexOf
+│   ├── includes
+│   ├── find
+│   └── findIndex
+│
+├── Logic Check
+│   ├── some
+│   └── every
+│
+├── Iteration / Transformation
+│   ├── forEach
+│   ├── map
+│   ├── filter
+│   ├── reduce
+│   ├── reduceRight
+│   ├── flat
+│   └── flatMap
+│
+├── Ordering
+│   ├── sort
+│   └── reverse
+│
+├── Conversion
+│   ├── join
+│   └── toString
+│
+└── Creation Helpers
+    ├── Array.from
+    ├── Array.of
+    └── Array.isArray

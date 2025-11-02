@@ -1,6 +1,8 @@
 'use strict';
 
 // ==> Default parameters in Function..
+//--> if a value is not provided (or is undefined),
+//    the defalut value is used.
 const bookings = [];
 
 function booking(
@@ -20,3 +22,27 @@ function booking(
 booking('BE02');
 booking('JH20', 2, 500);
 booking('JS09', undefined, 100); // triggered default value using udefined..
+
+//==> using function as default value
+//example 1
+function randomNum() {
+  return Math.floor(Math.random() * 10);
+}
+
+function show(num = randomNum()) {
+  console.log(num);
+}
+show(12);
+
+// example 2
+function message() {
+  return 'Day';
+}
+
+function greeting(time = message()) {
+  const greet = `Good ${time} guyz!`;
+  console.log(greet);
+}
+
+greeting();
+greeting('Morning');

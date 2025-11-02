@@ -1,73 +1,45 @@
-'use strict';
+const PromptSync = require('prompt-sync');
 
-// 1
-// Guess number
-const prompt = require('prompt-sync')();
-// console.log("Guess Number between 0 and 10, you have 3 chance.");
-// let randomNum = Math.trunc(Math.random() * 11);
-// let count = 0;
-// while (count < 3) {
-//   let num;
-//   count++;
-//   num = Number(prompt('Enter the number: '));
-//   if (num === randomNum) {
-//     console.log('WOW! Guess is Right!!!');
-//     break;
-//   }
-//   console.log('Try Again!');
-// }
+const newKitchen = {
+  name: 'Desi-Kitchen',
+  breakfast: ['Aloo-Paratha', 'Masala-Dosa', 'Poori', 'Bhatura'],
+  meal: ['Dal Tadka', 'Steamed Rice', 'Mixed Vegetable Sabzi', 'Chapati'],
+  timings: {
+    mon: {
+      open: '08:00 AM',
+      close: '09:00 PM',
+    },
+  },
+  //-
+  checkAvailability: function ({ breakfastIndex, mealIndex }) {
+    console.log(
+      `Kitchen open at: ${this.timings.mon.open}. ${this.breakfast[breakfastIndex]} will available till 09:00 PM, ${this.meal[mealIndex]} will available till 03:00 PM. Kitchen close at ${this.timings.mon.close}`
+    );
+  },
+};
 
-// 2
+const paraNew = {
+  breakfastIndex: 1,
+  mealIndex: 2,
+};
 
-console.log('Hello world');
-console.log('this is the beginning of theory ');
+newKitchen.checkAvailability(paraNew);
 
-console.log(99 / 0);
-console.log(100 / 'tyu');
-
-let big = 1234567890123456789012345678901234567890n;
-console.log(big);
-
-const numExp = (num) => num ** 2 + num * num;
-console.log(numExp(5));
-
-function numSq(num) {
-  return num ** 2;
+function adding(numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum = sum + numbers[i];
+  }
+  return sum;
 }
 
-const numMulti = function (num) {
-  return num ** 2;
-};
+// console.log(adding(12, 11, 10, 20));
 
-console.log(numSq(12));
+const input = require('prompt-sync')();
+const tables = [];
+for (let i = 0; i < 5; i++) {
+  tables[i] = Number(input(`Enter Number${[i + 1]}: `));
+}
+console.log(tables);
 
-console.log(numMulti(11));
-
-const arrN = [12, 'hello'];
-console.log(arrN);
-
-let car = {
-  type: 'car',
-  model: 'BMW-EV',
-  fuel: 'electric',
-  category: ['a1', 'a2', 'b3'],
-  // details: function () {
-  //   console.log(
-  //     `This is ${this.type} of model ${this.model}, It's ${this.fuel} car`
-  //   );
-  // },
-};
-// console.log(car.details());
-
-const newCar = { ...car };
-const newVehicle = structuredClone(car);
-console.log(newCar);
-
-newCar.type = 'new';
-newCar.category[1] = 'c1';
-console.log(car);
-console.log(newCar);
-console.log(newVehicle);
-newVehicle.category[2] = 'x1';
-console.log(newVehicle);
-console.log(car);
+console.log(adding(tables));
