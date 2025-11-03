@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "eslint": "^9.39.1",
     "prompt-sync": "^4.2.0"
   }
 }
