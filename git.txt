@@ -1,0 +1,45 @@
+Updating Local Files to Existing GitHub Repo
+│
+├── 1) Initialize Git in Project
+│     └── git init
+│
+├── 2) Connect to Remote Repository
+│     └── git remote add origin <GitHub Link>
+│
+├── 3) Stage and Commit Files
+│     ├── git add .          # stage all files
+│     └── git commit -m "message"
+│
+├── 4) Set Branch to main
+│     └── git branch -M main
+│
+├── 5) Authentication Methods
+│     │
+│     ├── A) SSH Method (Recommended)
+│     │     ├── Generate key:
+│     │     │     ssh-keygen -t ed25519 -C "email"
+│     │     ├── View & copy public key:
+│     │     │     nano ~/.ssh/id_ed25519.pub
+│     │     ├── Add to GitHub → Settings → SSH Keys
+│     │     ├── Test:
+│     │     │     ssh -T git@github.com
+│     │     └── Set remote to SSH:
+│     │           git remote set-url origin git@github.com:<username>/<repo>.git
+│     │
+│     └── B) Personal Access Token (PAT)
+│           ├── Generate PAT:
+│           │     GitHub → Settings → Developer Settings → Tokens
+│           └── Set remote with token:
+│                 git remote set-url origin https://<TOKEN>@github.com/<username>/<repo>.git
+│
+├── 6) Upload Files to GitHub
+│     └── git push -u origin main
+│
+└── 7) If Push Fails (repo has existing commits)
+      │
+      ├── Pull changes first:
+      │     git pull origin main
+      │
+      └── If conflicts or clean history needed:
+            git pull --rebase origin main
+            git push -u origin main
