@@ -1,3 +1,4 @@
+```
 Updating Local Files to Existing GitHub Repo
 │
 ├── 1) Initialize Git in Project
@@ -16,30 +17,43 @@ Updating Local Files to Existing GitHub Repo
 ├── 5) Authentication Methods
 │     │
 │     ├── A) SSH Method (Recommended)
-│     │     ├── Generate key:
-│     │     │     ssh-keygen -t ed25519 -C "email"
-│     │     ├── View & copy public key:
-│     │     │     nano ~/.ssh/id_ed25519.pub
+│     │     ├── ssh-keygen -t ed25519 -C "email"
+│     │     ├── nano ~/.ssh/id_ed25519.pub (copy key)
 │     │     ├── Add to GitHub → Settings → SSH Keys
-│     │     ├── Test:
-│     │     │     ssh -T git@github.com
-│     │     └── Set remote to SSH:
-│     │           git remote set-url origin git@github.com:<username>/<repo>.git
+│     │     ├── ssh -T git@github.com (test)
+│     │     └── git remote set-url origin git@github.com:<username>/<repo>.git
 │     │
 │     └── B) Personal Access Token (PAT)
-│           ├── Generate PAT:
-│           │     GitHub → Settings → Developer Settings → Tokens
-│           └── Set remote with token:
-│                 git remote set-url origin https://<TOKEN>@github.com/<username>/<repo>.git
+│           ├── Generate Token (GitHub → Developer Settings → PAT)
+│           └── git remote set-url origin https://<TOKEN>@github.com/<username>/<repo>.git
 │
 ├── 6) Upload Files to GitHub
 │     └── git push -u origin main
 │
-└── 7) If Push Fails (repo has existing commits)
+├── 7) If Push is Rejected (Repo has existing commits)
+│     ├── git pull origin main
+│     └── git pull --rebase origin main
+│
+└── 8) Exclude a Local Folder from Upload
       │
-      ├── Pull changes first:
-      │     git pull origin main
+      ├── Create/Edit .gitignore
+      │     └── folder_name/
       │
-      └── If conflicts or clean history needed:
-            git pull --rebase origin main
-            git push -u origin main
+      ├── If folder was NOT committed before → Done ✅
+      │
+      └── If folder was already committed
+            ├── git rm -r --cached folder_name
+            ├── git commit -m "Stop tracking folder"
+            └── git push
+
+//-->
+Ignore One File
+│
+├── If file is NOT tracked yet:
+│     └── Add filename to .gitignore → Done ✅
+│
+└── If file is already tracked:
+      ├── Add filename to .gitignore
+      ├── git rm --cached <filename>
+      ├── git commit -m "Stop tracking file"
+      └── git push
