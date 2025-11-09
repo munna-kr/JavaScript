@@ -14,10 +14,23 @@ syntax: const mySet = new Set();
 const idNo = new Set([1231, 2242, 9282, 1093, 1111, 3929, 3901, 9301]);
 console.log(idNo);
 
+/*
+--> Only iterables can be used to build a Set directly
+--> ❌ If not iterable → TypeError: object is not iterable
+--
+--> .add it doesn't need iterables directly,
+--> it can be any value.(primtive or object)
+
+Common Syntaxes:
+new Set(<iterable>)
+Set.add(<any value>)
+*/
+
 // ====> COMMON METHODS <====
 
 // 1. add(value)
 idNo.add(4499);
+idNo.add(5555).add(6666).add(7777); // chaining add() method
 
 // 2. delete(value)
 idNo.delete(1111);
@@ -73,7 +86,7 @@ const storeStaff = [
 const uniqueStaff = new Set([...cafeStaff, ...bankStaff, ...storeStaff]);
 console.log(uniqueStaff);
 
-// =======> New features of Sets, since june 2024<======
+// =======> New features of Sets, since june 2024, node -v 22+ needed <======
 
 const setCafeStaff = new Set(['Waiter', 'Manager', 'Chef', 'Cashier']);
 const setBankStaff = new Set(['Manager', 'Cashier', 'Accountant', 'Clerk']);
@@ -121,3 +134,16 @@ console.log(
 // ==> true if all elements in set A are also in the set B, and false otherwise.
 const iscafeSubsetOfbank = setCafeStaff.isSubsetOf(setBankStaff);
 console.log('is setCafeStaff is sub set of setBankStaff:', iscafeSubsetOfbank);
+
+// another examples:
+const a = new Set([1, 2, 3, 4]);
+const b = new Set([3, 4, 5, 6]);
+
+console.log(a.union(b)); // Set {1, 2, 3, 4, 5, 6}
+console.log(a.intersection(b)); // Set {3, 4}
+console.log(a.difference(b)); // Set {1, 2}
+console.log(a.symmetricDifference(b)); // Set {1, 2, 5, 6}
+
+console.log(a.isSubsetOf(b)); // false
+console.log(a.isSupersetOf(b)); // false
+console.log(a.isDisjointFrom(b)); // false

@@ -17,21 +17,24 @@ TEST DATA: 125, 555, and 44
 // ------- solution ----------
 
 function calcTip(bill) {
-    let tip = 0;
-    bill >= 50 && bill <= 300 ? tip = (15 / 100) * bill :
-        tip = (20 / 100) * bill;
-    return tip;
-};
+  let tip = 0;
+  bill >= 50 && bill <= 300
+    ? (tip = (15 / 100) * bill)
+    : (tip = (20 / 100) * bill);
+  return tip;
+}
 
 let bills = new Array(125, 555, 44);
 let tips = new Array(calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2]));
 
 function totalAmount(bills, tips) {
-    return bills + tips;
-};
+  return bills + tips;
+}
 
-let totals = new Array(totalAmount(bills[0], tips[0]),
-    totalAmount(bills[1], tips[1]),
-    totalAmount(bills[2], tips[2]));
+let totals = new Array(
+  totalAmount(bills[0], tips[0]),
+  totalAmount(bills[1], tips[1]),
+  totalAmount(bills[2], tips[2])
+);
 
 console.log(bills, tips, totals);

@@ -1,59 +1,50 @@
-```
-Updating Local Files to Existing GitHub Repo
+🗂 Updating Local Files to GitHub
 │
-├── 1) Initialize Git in Project
-│     └── git init
+├─ 🔧 Initialize Git
+│    └─ git init
 │
-├── 2) Connect to Remote Repository
-│     └── git remote add origin <GitHub Link>
+├─ 🌐 Connect Remote
+│    └─ git remote add origin <GitHub Link>
 │
-├── 3) Stage and Commit Files
-│     ├── git add .          # stage all files
-│     └── git commit -m "message"
+├─ 📦 Stage & Commit
+│    ├─ git add .
+│    └─ git commit -m "message"
 │
-├── 4) Set Branch to main
-│     └── git branch -M main
+├─ 🌿 Set Branch
+│    └─ git branch -M main
 │
-├── 5) Authentication Methods
-│     │
-│     ├── A) SSH Method (Recommended)
-│     │     ├── ssh-keygen -t ed25519 -C "email"
-│     │     ├── nano ~/.ssh/id_ed25519.pub (copy key)
-│     │     ├── Add to GitHub → Settings → SSH Keys
-│     │     ├── ssh -T git@github.com (test)
-│     │     └── git remote set-url origin git@github.com:<username>/<repo>.git
-│     │
-│     └── B) Personal Access Token (PAT)
-│           ├── Generate Token (GitHub → Developer Settings → PAT)
-│           └── git remote set-url origin https://<TOKEN>@github.com/<username>/<repo>.git
+├─ 🔐 Authentication
+│    │
+│    ├─ 🛡 SSH Method
+│    │    ├─ ssh-keygen -t ed25519 -C "email"
+│    │    ├─ nano ~/.ssh/id_ed25519.pub
+│    │    ├─ Add key to GitHub (Settings → SSH Keys)
+│    │    └─ git remote set-url origin git@github.com:<username>/<repo>.git
+│    │
+│    └─ 🔑 PAT Method
+│         └─ git remote set-url origin https://<TOKEN>@github.com/<username>/<repo>.git
 │
-├── 6) Upload Files to GitHub
-│     └── git push -u origin main
+├─ 🚀 Upload to GitHub
+│    └─ git push -u origin main
 │
-├── 7) If Push is Rejected (Repo has existing commits)
-│     ├── git pull origin main
-│     └── git pull --rebase origin main
+├─ ⚠ If Push Rejected (Diverged Branch)
+│    ├─ git pull origin main
+│    └─ git pull --rebase origin main
 │
-└── 8) Exclude a Local Folder from Upload
-      │
-      ├── Create/Edit .gitignore
-      │     └── folder_name/
-      │
-      ├── If folder was NOT committed before → Done ✅
-      │
-      └── If folder was already committed
-            ├── git rm -r --cached folder_name
-            ├── git commit -m "Stop tracking folder"
-            └── git push
-
-//-->
-Ignore One File
+├─ 📁 Ignore Folder (.gitignore)
+│    ├─ Add to .gitignore:
+│    │      folder_name/
+│    │
+│    └─ If folder already tracked:
+│          git rm -r --cached folder_name
+│          git commit -m "Stop tracking folder"
+│          git push
 │
-├── If file is NOT tracked yet:
-│     └── Add filename to .gitignore → Done ✅
-│
-└── If file is already tracked:
-      ├── Add filename to .gitignore
-      ├── git rm --cached <filename>
-      ├── git commit -m "Stop tracking file"
-      └── git push
+└─ 📄 Ignore One File
+     ├─ Add to .gitignore:
+     │      filename
+     │
+     └─ If file already tracked:
+           git rm --cached filename
+           git commit -m "Stop tracking file"
+           git push

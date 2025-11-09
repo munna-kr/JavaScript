@@ -92,3 +92,47 @@ const commonGuys = ['abc', 'xyz', 'mno'];
 human.set(commonGuys, 'FavBook: System-Programming');
 
 console.log(human.get(commonGuys));
+
+//--
+console.log('--Complex object as key in Map--');
+//==> COMPLEX KEYS OBJECTS ARE ALLOWED
+
+// In a plain object {}, keys are always strings or symbols
+// everything else is converted to a string.
+const obj1 = {};
+const keyObj = { id: 111 };
+const keyArr = [1, 2];
+const keyFunc = function () {};
+
+obj1[keyObj] = 'Object_key';
+obj1.keyArr = 'Array_key';
+
+for (const key of Object.keys(obj1)) {
+  console.log(typeof key);
+}
+
+/*
+And in maps, it got fixed.
+we can use complex keys (objects, arrays, functions, even DOM nodes)
+not just strings.
+it keeps key identity
+in map keys are stored by reference not by string conversion
+*/
+const map1 = new Map();
+map1
+  .set(keyObj, 'Object_Key')
+  .set(keyArr, 'Array_Key')
+  .set(keyFunc, 'Function_Key');
+console.log(...map1.keys());
+
+// type of keys iterator
+console.log(typeof map1.keys());
+
+//just one key, 1st key of map
+console.log(map1.keys().next().value);
+
+// type of key
+console.log(typeof map1.keys().next().value);
+
+// specific key
+console.log([...map1.keys()][2]);

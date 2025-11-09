@@ -20,8 +20,11 @@ HINT: To calculate 20% of a value, simply multiply it by 20/100 = 0.2
 let bill = 375;
 let tip = 0;
 
-bill >= 50 && bill <= 300 ? tip = (15 / 100) * bill :
-    tip = (20 / 100) * bill;
+bill >= 50 && bill <= 300
+  ? (tip = (15 / 100) * bill)
+  : (tip = (20 / 100) * bill);
 
 // total amount
-console.log(`The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`);
+console.log(
+  `The bill was ${bill}, the tip was ${tip}, and the total value ${bill + tip}`
+);
