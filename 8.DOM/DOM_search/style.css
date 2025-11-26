@@ -1,0 +1,21 @@
+.nav-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.nav-menu li a {
+  display: block;
+  padding: 10px 14px;
+  background: #eee;
+  text-decoration: none;
+  color: #333;
+  border-radius: 4px;
+}
+
+.nav-menu li a:hover {
+  background: #d9d9d9;
+}

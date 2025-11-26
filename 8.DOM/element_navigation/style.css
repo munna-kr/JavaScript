@@ -1,0 +1,25 @@
+* {
+  margin: 0px;
+}
+
+/* nav {
+  margin: 10px 0;
+} */
+nav ul {
+  display: flex;
+  font-family: "Courier New", Courier, monospace;
+  list-style: none;
+  padding: 15px 5px;
+}
+li {
+  margin: 0 15px;
+  padding: 0 10px;
+}
+
+.about {
+  width: 60%;
+  height: auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.5rem;
+  padding: 10px;
+}
