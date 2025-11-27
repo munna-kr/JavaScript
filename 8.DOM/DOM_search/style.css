@@ -1,21 +1,14 @@
-.nav-menu {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.box-container {
   display: flex;
   flex-direction: row;
-  gap: 10px;
 }
-
-.nav-menu li a {
-  display: block;
-  padding: 10px 14px;
-  background: #eee;
-  text-decoration: none;
-  color: #333;
-  border-radius: 4px;
-}
-
-.nav-menu li a:hover {
-  background: #d9d9d9;
+.box {
+  width: 200px;
+  height: 100px;
+  margin: 20px;
+  padding: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 1.1rem;
+  background-color: teal;
+  color: whitesmoke;
 }
