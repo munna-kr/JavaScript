@@ -1,0 +1,29 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+.bg-yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.bg-red {
+  background-color: red;
+  color: aliceblue;
+}
+
+.font-small {
+  font-family: Fira code;
+  font-size: 1.2rem;
+}
+.font-big {
+  font-family: Fira code;
+  font-size: 2rem;
+}
+
+.dark-text {
+  color: black;
+  font-style: bold;
+}

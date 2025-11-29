@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOKES</title>
+    <style>
+      h1 {
+        color: teal;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        font-style: italic;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: #357ab8;
+      }
+      div {
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+          'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        background-color: rgb(52, 65, 51);
+        border: 1px solid teal;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      #greet {
+        color: white;
+        font-family: Source Code Pro;
+        font-size: 25px;
+      }
+      #joke {
+        color: antiquewhite;
+        font-family: monospace;
+        font-size: 20px;
+        padding: 5px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>"Life is better when you're laughing"</h1>
+    <div>
+      <span id="greet"
+        >Greetings!, <br />Would You like to read random joke ?</span
+      >
+      <p id="joke"></p>
+      <button type="button" class="btn" id="yes">Yes</button>
+      <button type="button" class="btn" id="no">No</button>
+    </div>
+    <script>
+      const jokes = [
+        'Why don’t skeletons fight each other? They don’t have the guts',
+        'Why was the math book sad? It had too many problems',
+
+        'Why don’t eggs tell jokes? They’d crack each other up.',
+
+        'What do you call fake spaghetti? An impasta.',
+
+        'Why did the scarecrow win an award? He was outstanding in his field.',
+
+        'What do you call cheese that isn’t yours? Nacho cheese.',
+
+        'Why did the computer go to the doctor? It had a virus.',
+
+        'What do you call a fish with no eyes? Fsh.',
+
+        'Why don’t scientists trust atoms? Because they make up everything.',
+
+        'What do you call a bee that can’t make up its mind? A maybe.',
+      ];
+
+      document.getElementById('yes').addEventListener('click', function () {
+        document.getElementById('joke').innerText =
+          jokes[Math.floor(Math.random() * 10)];
+        document.getElementById('greet').innerText = '😀😀';
+      });
+
+      document.getElementById('no').addEventListener('click', () => {
+        document.getElementById('joke').innerText = 'Have a beautiful day!';
+        document.getElementById('greet').innerText = '☺️☺️';
+      });
+    </script>
+  </body>
+</html>

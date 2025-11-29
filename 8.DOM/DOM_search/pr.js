@@ -17,8 +17,8 @@ comments.style.color = 'cyan';
 // Q4
 const li = document.getElementsByTagName('li');
 
-for (let i of li) {
-  i.style.background = 'black';
+for (let element of li) {
+  element.style.background = 'black';
 }
 
 // Q5
