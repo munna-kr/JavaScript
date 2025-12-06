@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div2">
+      <button id="google"></button>
+      <button id="youtube"></button>
+      <button id="w3schools"></button>
+    </div>
+
+    <script>
+      const div = document.getElementById('div2');
+
+      const newbtn = document.createElement('button');
+      newbtn.textContent = 'new button click here!!';
+      newbtn.setAttribute('type', 'button');
+      div.append('newbtn');
+
+      newbtn.addEventListener('click', function () {
+        console.log('Hello this is ...');
+      });
+    </script>
+  </body>
+</html>
