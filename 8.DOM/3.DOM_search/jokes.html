@@ -78,15 +78,37 @@
         'What do you call a bee that can’t make up its mind? A maybe.',
       ];
 
-      document.getElementById('yes').addEventListener('click', function () {
-        document.getElementById('joke').innerText =
-          jokes[Math.floor(Math.random() * 10)];
-        document.getElementById('greet').innerText = '😀😀';
+      const greet = document.getElementById('greet');
+      const joke = document.getElementById('joke');
+
+      //==> yes
+      const yes = document.getElementById('yes');
+      yes.addEventListener('click', function () {
+        joke.innerText = jokes[Math.floor(Math.random() * 10)];
+        greet.innerText = '😀😀';
+
+        yes.textContent = 'Next';
       });
 
-      document.getElementById('no').addEventListener('click', () => {
-        document.getElementById('joke').innerText = 'Have a beautiful day!';
-        document.getElementById('greet').innerText = '☺️☺️';
+      //==> no
+      const no = document.getElementById('no');
+      no.addEventListener('click', function () {
+        joke.innerText = 'Have a beautiful day!';
+        yes.innerText = 'Yes';
+        greet.innerText = '☺️☺️';
+
+        yes.remove();
+        no.remove();
+        div.append(btnReload);
+      });
+
+      // ==> refresh
+      const div = document.querySelector('div');
+      const btnReload = document.createElement('button');
+      btnReload.innerText = 'Reload';
+      btnReload.setAttribute('class', 'btn');
+      btnReload.addEventListener('click', function () {
+        location.reload();
       });
     </script>
   </body>

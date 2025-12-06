@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JOKES</title>
+    <style>
+      h1 {
+        color: teal;
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+        font-style: italic;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 16px;
+        background: #4a90e2;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+      }
+      .btn:hover {
+        background: #357ab8;
+      }
+      div {
+        font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+          "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
+        background-color: rgb(52, 65, 51);
+        border: 1px solid teal;
+        border-radius: 10px;
+        padding: 20px;
+      }
+      #greet {
+        color: white;
+        font-family: Source Code Pro;
+        font-size: 25px;
+      }
+      #joke {
+        color: antiquewhite;
+        font-family: monospace;
+        font-size: 20px;
+        padding: 5px;
+        margin: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>"Life is better when you're laughing"</h1>
+    <div>
+      <span id="greet"
+        >Greetings!, <br />Would You like to read random joke ?</span
+      >
+      <p id="joke"></p>
+      <button type="button" class="btn" id="yes">Yes</button>
+      <button type="button" class="btn" id="no">No</button>
+    </div>
+    <script src="jokes.js"></script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Practice</title>
+  </head>
+  <style>
+    a {
+      text-decoration: none;
+    }
+
+    .link-btn {
+      color: honeydew;
+      padding: 5px;
+      margin: 5px;
+      background-color: #2196f3;
+      border-radius: 10px;
+      border: 2px solid;
+      text-decoration: none;
+      display: inline-block;
+    }
+  </style>
+  <body>
+    <h1>Practice</h1>
+    <button id="btn">click here...</button>
+    <button onclick="alert('button 1 clicked')">button1</button>
+    <button onclick="alert('button 2 clicked')">button2</button>
+    <button onclick="alert('button 3 clicked')">button3</button>
+
+    <h2>Bookmarks</h2>
+    <div>
+      -> using on-click <br />
+      <button><a href="https://google.com">Google</a></button>
+      <button><a href="https://youtube.com">YouTube</a></button>
+      <button><a href="https://w3schools.com">w3schools</a></button>
+    </div>
+
+    <br />
+    <div id="div2">
+      -> using addEventListener() <br />
+      <button id="google">google</button>
+      <button id="youtube"></button>
+      <button id="w3schools"></button>
+    </div>
+
+    <div id="link-array">
+      <br />
+      -> using array and addEventListener() <br />
+    </div>
+
+    <!-- Q5 glow bulb -->
+    <button id="glow-btn">Glow</button>
+    <script src="12.practice.js"></script>
+  </body>
+</html>
